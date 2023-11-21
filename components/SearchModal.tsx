@@ -13,6 +13,8 @@ import { MovieCard } from "../components";
 import { useAtom } from "jotai";
 import { searchMovieAtom } from "@/atoms";
 
+/* The `SearchModal` component is a React functional component that displays a modal for searching
+movies. */
 export const SearchModal = () => {
   const allMovies = [
     ...TRENDING_MOVIES,

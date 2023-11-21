@@ -21,6 +21,13 @@ type MovieCardProps = {
   movie: Movie;
 };
 
+/**
+ * The `MovieCard` component is a clickable card that displays movie information and triggers a modal
+ * when clicked.
+ * @param {MovieCardProps}  - - `movie`: The movie object that contains information about the movie,
+ * such as title, backdrop path, poster path, and vote average.
+ * @returns The MovieCard component is being returned.
+ */
 export const MovieCard = ({ movie }: MovieCardProps) => {
   const [currentMovie, setCurrentMovie] = useAtom(currentMovieAtom);
   const [showModal, setShowModal] = useAtom(showMoviePreviewAtom);

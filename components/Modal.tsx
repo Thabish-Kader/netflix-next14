@@ -15,6 +15,8 @@ import {
 import { MdCancel } from "react-icons/md";
 import ReactPlayer from "react-player/lazy";
 
+/* The above code is defining a React component called `Modal`. This component is responsible for
+rendering a modal window that displays information about a movie or TV show. */
 export const Modal = () => {
   const [showModal, setShowModal] = useAtom(showMoviePreviewAtom);
   const [currentMovie, setCurrentMovie] = useAtom(currentMovieAtom);

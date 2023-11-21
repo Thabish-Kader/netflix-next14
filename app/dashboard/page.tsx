@@ -11,6 +11,11 @@ import {
   TRENDING_MOVIES,
 } from "@/constants";
 
+/**
+ * The Dashboard component renders a responsive layout with a header, hero section, and multiple movie
+ * rows categorized by genre.
+ * @returns The Dashboard component is returning a JSX element.
+ */
 const Dashboard = () => {
   return (
     <div className={`relative h-screen w-full bg-gradient-to-b  lg:h-[140vh] `}>

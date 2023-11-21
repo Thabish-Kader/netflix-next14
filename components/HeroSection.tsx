@@ -1,26 +1,25 @@
-"use client"
-import {  currentMovieAtom, showMoviePreviewAtom } from '@/atoms';
-import { NETFLIX_ORGINALS } from '@/constants'
-import { Movie } from '@/typings';
-import { useAtom } from 'jotai';
-import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
+"use client";
+import { currentMovieAtom, showMoviePreviewAtom } from "@/atoms";
+import { NETFLIX_ORGINALS } from "@/constants";
+import { Movie } from "@/typings";
+import { useAtom } from "jotai";
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { HiInformationCircle } from "react-icons/hi";
 
+/* The `HeroSection` component is a React functional component that displays a hero section for a
+movie. */
 export const HeroSection = () => {
-  const [showModal, setShowModal] = useAtom(showMoviePreviewAtom)
-  const [movie, setMovie] = useState<Movie|null>(null)
-  const [currentMovie, setCurrentMovie] = useAtom(currentMovieAtom)
+  const [showModal, setShowModal] = useAtom(showMoviePreviewAtom);
+  const [movie, setMovie] = useState<Movie | null>(null);
+  const [currentMovie, setCurrentMovie] = useAtom(currentMovieAtom);
 
-    useEffect(() => {
-      const randomMovie=Math.floor(Math.random()* NETFLIX_ORGINALS.length)
-      const movie = NETFLIX_ORGINALS[randomMovie]
-      setMovie(
-        movie
-      )
-    }, [])
-
+  useEffect(() => {
+    const randomMovie = Math.floor(Math.random() * NETFLIX_ORGINALS.length);
+    const movie = NETFLIX_ORGINALS[randomMovie];
+    setMovie(movie);
+  }, []);
 
   return (
     <div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
@@ -29,8 +28,8 @@ export const HeroSection = () => {
           <Image
             src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
             fill
-            alt='hero-img'
-            className='object-cover'
+            alt="hero-img"
+            className="object-cover"
           />
         )}
       </div>
@@ -48,13 +47,13 @@ export const HeroSection = () => {
         <button
           className="bannerButton bg-[gray]/70 text-black"
           onClick={() => {
-            setCurrentMovie(movie)
-            setShowModal(true)
+            setCurrentMovie(movie);
+            setShowModal(true);
           }}
         >
-          <HiInformationCircle  className="h-5 w-5 md:h-8 md:w-8 " /> More Info
+          <HiInformationCircle className="h-5 w-5 md:h-8 md:w-8 " /> More Info
         </button>
       </div>
     </div>
-  )
-}
+  );
+};

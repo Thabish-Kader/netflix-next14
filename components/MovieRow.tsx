@@ -11,6 +11,7 @@ type MovieRowProps = {
   showAsBanner?: boolean;
 };
 
+/* The code is defining a functional component called `MovieRow` in TypeScript React. */
 export const MovieRow = ({ title, movies, showAsBanner }: MovieRowProps) => {
   const [isMoved, setIsMoved] = useState(false);
   const rowRef = useRef<HTMLDivElement>(null);

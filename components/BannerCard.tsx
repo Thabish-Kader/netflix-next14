@@ -10,6 +10,13 @@ import React from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { FaPlayCircle, FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa";
 
+/**
+ * The `BannerCard` component is a clickable card that displays movie information and triggers a modal
+ * when clicked.
+ * @param  - - `movie`: A single movie object that contains information about the movie, such as its
+ * title, backdrop/poster path, and vote average.
+ * @returns The `BannerCard` component is returning a JSX element.
+ */
 export const BannerCard = ({ movie }: { movie: Movie }) => {
   const [currentMovie, setCurrentMovie] = useAtom(currentMovieAtom);
   const [showModal, setShowModal] = useAtom(showMoviePreviewAtom);
