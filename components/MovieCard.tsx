@@ -9,12 +9,7 @@ import { Movie } from "@/typings";
 import { useAtom } from "jotai";
 import Image from "next/image";
 import React from "react";
-import {
-  FaPlayCircle,
-  FaRegThumbsUp,
-  FaRegThumbsDown,
-  FaThumbsDown,
-} from "react-icons/fa";
+import { FaPlayCircle, FaRegThumbsUp, FaRegThumbsDown } from "react-icons/fa";
 import { CiCirclePlus } from "react-icons/ci";
 
 type MovieCardProps = {
@@ -58,10 +53,10 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
           <div className="bg-[#141414] mt-auto  w-full">
             <div className="flex flex-col p-2  h-full">
               <div className="flex items-center space-x-2 p-21">
-                <FaPlayCircle className="h-6 w-6" />
-                <CiCirclePlus className="h-6 w-6" />
-                <FaRegThumbsUp className="h-5 w-5" />
-                <FaRegThumbsDown className="h-5 w-5" />
+                <FaPlayCircle className="h-6 w-6 text-gray-400" />
+                <CiCirclePlus className="h-6 w-6 text-gray-400" />
+                <FaRegThumbsUp className="h-5 w-5 text-gray-400" />
+                <FaRegThumbsDown className="h-5 w-5 text-gray-400" />
               </div>
               <div className="flex flex-col ">
                 <p className=" font-bold  text-xs">{movie?.title}</p>

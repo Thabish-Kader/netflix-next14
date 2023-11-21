@@ -46,10 +46,10 @@ export const BannerCard = ({ movie }: { movie: Movie }) => {
         <div className="bg-[#141414] mt-auto  w-full">
           <div className="flex flex-col p-2  h-full">
             <div className="flex items-center space-x-2 p-2">
-              <FaPlayCircle className="h-6 w-6" />
-              <CiCirclePlus className="h-6 w-6" />
-              <FaRegThumbsUp className="h-5 w-5" />
-              <FaRegThumbsDown className="h-5 w-5" />
+              <FaPlayCircle className="h-6 w-6 text-gray-400" />
+              <CiCirclePlus className="h-6 w-6 text-gray-400" />
+              <FaRegThumbsUp className="h-5 w-5 text-gray-400" />
+              <FaRegThumbsDown className="h-5 w-5 text-gray-400" />
             </div>
             <div className="flex flex-col ">
               <p className=" font-bold  text-xs">{movie?.title}</p>
