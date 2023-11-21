@@ -2,26 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  
+  background: transparent;  
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+@layer base {
+    body {
+        @apply bg-[#141414] text-white ;
+    }
+    header {
+        @apply fixed top-0 z-50 flex w-full items-center justify-between px-4 py-4 transition-all
+        lg:px-10 lg:py-6;
+    }
+}
+
+
+@layer components {
+    .headerLink {
+      @apply cursor-pointer text-sm font-light text-[#e5e5e5] transition duration-[.4s] 
+          hover:text-[#b3b3b3];
+    }
+    .bannerButton {
+      @apply flex items-center gap-x-2 rounded px-5   py-1.5 text-sm font-semibold transition
+      hover:opacity-75 md:py-2.5 md:px-8 md:text-xl;
+    }
+    .input {
+      @apply w-full rounded bg-[#333] px-5 py-3.5 placeholder-[gray] outline-none 
+      focus:bg-[#454545];
+    }
+    .modalButton {
+      @apply flex h-11 w-11 items-center justify-center rounded-full border-2 border-[gray]
+      bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10 
+    }
+    
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 14rem;
+    height: 9rem;
+    background-color: "black";
+    border-radius: 0.28rem;
+    margin-right: 0.3rem;
+    transition: all 300ms ease;
+    z-index: 1;
+    cursor: pointer;
+  
+    /* &:hover {
+      transform: scale(1.45);
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0, 0, 0, 0.5);
+      z-index: 5;
+  
+      .cardPoster {
+        height: 85%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .cardInfo {
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.75), 0 6px 6px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+      } */
+    }
+  .card:hover {
+    transform: scale(1.45);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6), 0 6px 6px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+
+    .cardPoster {
+      height: 85%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .cardInfo {
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.75), 0 6px 6px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+    }
+  }
+  
+    .cardPoster {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.28rem;
+    }
+  
+    .cardInfo {
+      min-height: fit-content;
+      background-color: "grren";
+      border-bottom-left-radius: 0.28rem;
+      border-bottom-right-radius: 0.28rem;
+      display: none;
+      padding: 0.4rem;
+      font-size: inherit;
+    }
+  
