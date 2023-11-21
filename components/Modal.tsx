@@ -41,7 +41,7 @@ export const Modal = () => {
         `https://api.themoviedb.org/3/${
           currentMovie?.media_type === "tv" ? "tv" : "movie"
         }/${currentMovie?.id}?api_key=
-          eadbbe60f981823cff96124edcf29d6e
+          ${process.env.NEXT_PUBLIC_TMDB_API_KEY}
         }&language=en-US&append_to_response=videos`,
         options
       )

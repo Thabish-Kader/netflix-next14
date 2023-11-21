@@ -25,7 +25,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
   const [currentMovie, setCurrentMovie] = useAtom(currentMovieAtom);
   const [showModal, setShowModal] = useAtom(showMoviePreviewAtom);
   const [searchMovies, setSearchMovies] = useAtom(searchMovieAtom);
-
+  console.log(searchMovies);
   return (
     <div
       className=" relative h-28  min-w-[180px] cursor-pointer transition duration-200
@@ -46,36 +46,23 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
         alt="movie poster"
       />
 
-      {/* <div className="absolute top-0 left-0 h-full w-full text-white opacity-0 hover:bg-black/80 hover:opacity-100  z-50">
-        <div className="flex flex-col h-full items-center justify-center ">
-          <div>
-            <p className=" font-bold text-center">{movie?.title}</p>
-            <div className="h-full px-5 flex flex-col ">
-              <p className="text-xs text-gray-500 line-clamp-3">
-                {movie?.overview}
-              </p>
-              <p className="text-green-500 text-xs mt-2">
-                Vote Average : {movie?.vote_average}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      <div className="absolute top0 left-0 bottom-2  h-full w-full text-white opacity-0 hover:opacity-100 z-50 flex flex-col items-center">
-        <div className="bg-[#141414] mt-auto  w-full">
-          <div className="flex flex-col p-2  h-full">
-            <div className="flex items-center space-x-2 p-2">
-              <FaPlayCircle className="h-6 w-6" />
-              <CiCirclePlus className="h-6 w-6" />
-              <FaRegThumbsUp className="h-5 w-5" />
-              <FaRegThumbsDown className="h-5 w-5" />
-            </div>
-            <div className="flex flex-col ">
-              <p className=" font-bold  text-xs">{movie?.title}</p>
-              <div className="h-full  flex flex-col ">
-                <p className="text-green-500 text-xs ">
-                  Vote Average : {movie?.vote_average}
-                </p>
+      <div>
+        <div className="absolute top0 left-0 bottom-2  h-full w-full text-white opacity-0 hover:opacity-100 z-50 flex flex-col items-center">
+          <div className="bg-[#141414] mt-auto  w-full">
+            <div className="flex flex-col p-2  h-full">
+              <div className="flex items-center space-x-2 p-21">
+                <FaPlayCircle className="h-6 w-6" />
+                <CiCirclePlus className="h-6 w-6" />
+                <FaRegThumbsUp className="h-5 w-5" />
+                <FaRegThumbsDown className="h-5 w-5" />
+              </div>
+              <div className="flex flex-col ">
+                <p className=" font-bold  text-xs">{movie?.title}</p>
+                <div className="h-full  flex flex-col ">
+                  <p className="text-green-500 text-xs ">
+                    Vote Average : {movie?.vote_average}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
